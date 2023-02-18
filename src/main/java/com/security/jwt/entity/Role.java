@@ -8,9 +8,9 @@ public class Role {
 	
 	@Id
 	
-	private String rollName;
+	private String roleName;
 	
-	private String rollDescription;
+	private String roleDescription;
 	
 	
 
@@ -18,26 +18,26 @@ public class Role {
 
 	}
 
-	public String getRollName() {
-		return rollName;
+	public String getRoleName() {
+		return roleName;
 	}
 
-	public void setRollName(String rollName) {
-		this.rollName = rollName;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
 
-	public String getRollDescription() {
-		return rollDescription;
+	public String getRoleDescription() {
+		return roleDescription;
 	}
 
-	public void setRollDescription(String rollDescription) {
-		this.rollDescription = rollDescription;
+	public void setRoleDescription(String roleDescription) {
+		this.roleDescription = roleDescription;
 	}
 
-	public Role(String rollName, String rollDescription) {
+	public Role(String roleName, String roleDescription) {
 
-		this.rollName = rollName;
-		this.rollDescription = rollDescription;
+		this.roleName = roleName;
+		this.roleDescription = roleDescription;
 	}
 
 	
