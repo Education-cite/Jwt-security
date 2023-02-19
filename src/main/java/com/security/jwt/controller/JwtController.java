@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.security.jwt.entity.JwtRequest;
+import com.security.jwt.entity.JwtResponse;
 import com.security.jwt.service.JwtService;
 
 @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
@@ -18,8 +19,8 @@ public class JwtController {
 	 private JwtService jwtService;
 
 	    @PostMapping({"/authenticate"})
-	    public void createJwtToken (@RequestBody JwtRequest jwtRequest) {
-	        
+	    public JwtResponse  createJwtToken (@RequestBody JwtRequest jwtRequest) throws Exception {
+	        return jwtService.createJwtToken(jwtRequest);
 	    }
 	
 	
