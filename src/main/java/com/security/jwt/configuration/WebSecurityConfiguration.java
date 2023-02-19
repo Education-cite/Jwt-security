@@ -46,7 +46,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 			
 				httpSecurity.cors();
 		        httpSecurity.csrf().disable()
-		                .authorizeRequests().antMatchers("/authenticate").permitAll()
+		                .authorizeRequests().antMatchers("/authenticate","/registerNewUser").permitAll()
 		                .antMatchers(HttpHeaders.ALLOW).permitAll()
 		                .anyRequest().authenticated()
 		                .and()
@@ -58,7 +58,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 		        	;
 		        httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 		}
-	
 	
 	
 		 @Bean
