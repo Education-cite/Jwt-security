@@ -1,6 +1,7 @@
 package com.security.jwt.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +11,7 @@ import com.security.jwt.entity.Product;
 import com.security.jwt.service.ProductService;
 
 @RestController
-
+@CrossOrigin("*")
 public class ProductController {
 	
 	@Autowired
