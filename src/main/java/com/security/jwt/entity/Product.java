@@ -1,9 +1,16 @@
 package com.security.jwt.entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Product {
@@ -16,6 +23,18 @@ public class Product {
 	private String productDescription;;
 	private Double productDiscountedPrice;
 	private Double productActualPrice;
+	
+	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	private Set<ImageModel> productimages;
+	@JoinTable(name="product_images",
+			joinColumns = {
+					@JoinColumn(name="product_id")
+			},
+			inverseJoinColumns = {
+					@JoinColumn(name="image_id")
+
+			}
+			)
 	
 	
 	public Integer getProductId() {
@@ -47,6 +66,12 @@ public class Product {
 	}
 	public void setProductActualPrice(Double producActualPrice) {
 		this.productActualPrice = producActualPrice;
+	}
+	public Set<ImageModel> getProductimages() {
+		return productimages;
+	}
+	public void setProductimages(Set<ImageModel> productimages) {
+		this.productimages = productimages;
 	}
 	
 	 
