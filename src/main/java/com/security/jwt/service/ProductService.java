@@ -1,5 +1,7 @@
 package com.security.jwt.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +19,10 @@ public class ProductService {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
+	public List<Product> getAllProducts(){
+		return productDao.findAll();
+		
+	}
 	
 	
 	
