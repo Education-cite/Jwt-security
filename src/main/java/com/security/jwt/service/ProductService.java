@@ -26,6 +26,9 @@ public class ProductService {
 	
 	
 	
+	public void deleteProduct(Integer productId) {
+		productDao.deleteById(productId);
+	}
 	
 	
 	
