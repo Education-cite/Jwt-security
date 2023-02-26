@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.security.jwt.dao.ProductDao;
 import com.security.jwt.entity.Product;
@@ -24,6 +25,11 @@ public class ProductService {
 		
 	}
 	
+	
+	public Product getProductDetailsById( Integer productId) {
+		return productDao.findById(productId).get();
+
+	}
 	
 	
 	public void deleteProduct(Integer productId) {
